@@ -12,7 +12,7 @@ var cityHist = [];
 $('.search').on("click", function (event){
     event.preventDefault();
     city = $(this).parent('.btnPar').siblings('.textVal').val().trim();
-    if(city === "") {
+        if(city === "") {
         return;
     };
     cityHist.push(city);
@@ -70,9 +70,6 @@ function getWeatherToday() {
         //temp
         var pEl = $('<p>').text(`Temperature: ${response.main.temp} °F`);
         cardTodayBody.append(pEl);
-        // feels like 
-        var pElTemp = $('<p>').text(`Feels Like: ${response.main.feels_like} °F`);
-        cardTodayBody.append(pElTemp);
         //humidty
         var pElHumid = $('<p>').text(`Humidity: ${response.main.humidity} %`);
         cardTodayBody.append(pElHumid);
@@ -85,8 +82,7 @@ function getWeatherToday() {
     };
 
     var fiveForecastEl = $('.fiveForecast');
-
-
+    
     function getFiveDayForecast() {
         var getUrlFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
         $.ajax({
