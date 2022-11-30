@@ -4,7 +4,7 @@ var city = 'Minneapolis';
 
 var date = dayjs().format('dddd, MMMM Do YYYY');
 var dateTime = dayjs().format('YYYY-MM-DD HH:MM:SS')
-console.log('dayjs');
+// console.log('dayjs');
 var cityHist = [];
 
 
@@ -50,3 +50,53 @@ function getHistory() {
     
     });
 };
+
+// grab today card body
+
+var cardTodayBody = $('.cardBodyToday')
+
+function getWeatherToday() {
+    var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
+
+    $.fetch({
+        url: getUrlCurrent,
+        method: 'GET',
+    }).then(function (response){
+        $('.cardTodayCityName').text(response.name);
+        $('cardTodayDate').text(date);
+
+        //icons
+        $('.icons').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
+        //temp
+        var pEl = $('<p>').text(`Temperature: ${response.main.temp} °F`);
+        cardTodayBody.append(pEl);
+        // feels like 
+        var pElTemp = $('<p>').text(`Feels Like: ${response.main.feels_like} °F`);
+        cardTodayBody.append(pElTemp);
+        //humidty
+        var pElHumid = $('<p>').text(`Humidity: ${response.main.humidity} %`);
+        cardTodayBody.append(pElHumid);
+        //wind speed
+        var pElWind = $('<p>').text(`Wind Speed: ${response.wind.speed} MPH`);
+        cardTodayBody.append(pElWind);
+        // setting lat and long for the city that is searched
+        var cityLat = response.coord.lat;
+        var cityLon = response.coord.lon;
+
+        var getUrlUvi = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=hourly,daily,minutely&appid=${key}`;
+
+
+        $.fetch({
+            url: getUrlUvi,
+            method: 'GET',
+        }).then(function (response){
+            var pElUvi = $('<p>').text(`UV Index: `);
+            var uviSpan = $('<span>').text(response.current.uvi);
+            var uvi = response.current.uvi;
+            pElUvi.append(uviSpan);
+            vardToday
+        })
+
+        })
+    }
+}
