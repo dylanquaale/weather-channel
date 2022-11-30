@@ -4,6 +4,12 @@ h1 {
 }
 
 label {
-    margin-top
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card {
+    margin: 10px;
 }
 
