@@ -1,7 +1,5 @@
 # weather-channel
 
-# Calander-Challenge
-
 Deployed link
 https://dylanquaale.github.io/Calander-Challenge/
 
@@ -9,8 +7,14 @@ https://dylanquaale.github.io/Calander-Challenge/
 http://127.0.0.1:5500/index.html
 
 ## Description
-
-.
+Keeps track of cities weather data
+All across the globe
+Shows future 5 day forecast
+include search bar
+Temperature
+Humidity 
+Wind speed
+Real feel is shown.
 
 ### Usage
 Keep track of current weather data
