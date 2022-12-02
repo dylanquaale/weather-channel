@@ -1,9 +1,8 @@
 # weather-channel
 
 Deployed link
+https://dylanquaale.github.io/weather-channel/
 
-
-\*\* link to the page
 
 
 ## Description
