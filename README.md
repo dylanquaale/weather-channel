@@ -1,10 +1,10 @@
 # weather-channel
 
 Deployed link
-https://dylanquaale.github.io/Calander-Challenge/
+
 
 \*\* link to the page
-http://127.0.0.1:5500/index.html
+
 
 ## Description
 Keeps track of cities weather data
