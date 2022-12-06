@@ -22,9 +22,9 @@ $('.search').on("click", function (event){
 });
 
 //this will create buttons for the search history
-var constHistEl = $('.cityHist');
+var historyEl = $('.cityHist');
 function getWeatherHistory() {
-    constHistEl.empty();
+    historyEl.empty();
 
     for (let i = 0; i < cityData.length; i++) {
         var rowEl= $('<row>');
@@ -34,7 +34,7 @@ function getWeatherHistory() {
         btnEl.addClass('btn btn-outline-seconday histBtn');
         btnEl.attr('type', 'button');
 
-        constHistEl.prepend(rowEl);
+        historyEl.prepend(rowEl);
         rowEl.append(btnEl);
     } if (!currentCity) {
         return;
