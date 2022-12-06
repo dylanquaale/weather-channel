@@ -20,6 +20,7 @@ Keep track of current weather data
 Shows future 5 day forecast. 
 
 #### Credits
+https://github.com/karizmatik215/06-Server-Side-APIs-Weather-Dashboard
 https://github.com/CodyG-2021 
 Dylan Quaale
 
