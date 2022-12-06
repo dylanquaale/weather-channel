@@ -1,5 +1,5 @@
 var key = 'e2e9e2de69bdf29accc1e83caa611a00';
-var city = 'Minneapolis';
+var currentCity = 'Minneapolis';
 var date = dayjs().format('dddd, MMMM Do YYYY');
 var dateTime = dayjs().format('YYYY-MM-DD HH:MM:SS')
 // console.log('dayjs');
@@ -9,11 +9,11 @@ var cityData = [];
 //saves text value of each search as an array in storage
 $('.search').on("click", function (event){
     event.preventDefault();
-    city = $(this).parent('.btnPar').siblings('.textVal').val().trim();
-        if(city === "") {
+    currentCity = $(this).parent('.btnPar').siblings('.textVal').val().trim();
+        if(currentCity === "") {
         return;
     };
-    cityData.push(city);
+    cityData.push(currentCity);
 
     localStorage.setItem('city', JSON.stringify(cityData));
     fiveForecastEl.empty();
@@ -36,12 +36,12 @@ function getWeatherHistory() {
 
         constHistEl.prepend(rowEl);
         rowEl.append(btnEl);
-    } if (!city) {
+    } if (!currentCity) {
         return;
     }
     $('histBtn').on("click", function (event){
         event.preventDefault();
-        city = $(this).text();
+        currentCity = $(this).text();
         fiveForecastEl.empty();
         getTodayWeather();    
 
@@ -54,7 +54,7 @@ function getWeatherHistory() {
 var cardData = $('.cardData')
 
 function getTodayWeather() {
-    var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
+    var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=imperial&appid=${key}`;
 
     $.ajax({
         url: getUrlCurrent,
@@ -82,7 +82,7 @@ function getTodayWeather() {
     var fiveForecastEl = $('.fiveForecast');
     
     function getFiveDayForecast() {
-        var getFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
+        var getFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=imperial&appid=${key}`;//
         $.ajax({
             url: getFiveDay,
             method: 'GET',
@@ -140,7 +140,7 @@ function getTodayWeather() {
     };
     function initLoad() {
 
-        var storeHist = JSON.parse(localStorage.getItem('city'));
+        var storeHist = JSON.parse(localStorage.getItem('currentCity'));
     
         if (storeHist !== null) {
             storeHist = storeHist
