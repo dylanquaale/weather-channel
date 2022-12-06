@@ -140,13 +140,15 @@ function getWeatherToday() {
                 divElBody.append(pElHumid);
             }
         });
+
+      
     };
     function initLoad() {
 
-        var cityHistStore = JSON.parse(localStorage.getItem('city'));
+        var storeHist = JSON.parse(localStorage.getItem('city'));
     
-        if (cityHistStore !== null) {
-            cityHist = cityHistStore
+        if (storeHist !== null) {
+            storeHist = storeHist
         }
         getHistory();
         getWeatherToday();
