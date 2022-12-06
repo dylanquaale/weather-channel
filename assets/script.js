@@ -16,7 +16,7 @@ $('.search').on("click", function (event){
     cityData.push(currentCity);
 
     localStorage.setItem('currentCity', JSON.stringify(cityData));
-    fiveForecastEl.empty();
+    fiveDayForecastEl.empty();
     getWeatherHistory();
     getTodayWeather();
 });
@@ -42,7 +42,7 @@ function getWeatherHistory() {
     $('histBtn').on("click", function (event){
         event.preventDefault();
         currentCity = $(this).text();
-        fiveForecastEl.empty();
+        fiveDayForecastEl.empty();
         getTodayWeather();    
 
     
@@ -79,7 +79,7 @@ function getTodayWeather() {
         getFiveDayForecast();
     };
 
-    var fiveForecastEl = $('.fiveForecast');
+    var fiveDayForecastEl = $('.fiveForecast');
     
     function getFiveDayForecast() {
         var getFiveDayWeather = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=imperial&appid=${key}`;//
@@ -110,7 +110,7 @@ function getTodayWeather() {
                 var divCardData = $('<div>');
                 divCardData.attr('class', 'card text-white bg-primary mb-3 cardOne');
                 divCardData.attr('style', 'max-width: 200px;');
-                fiveForecastEl.append(divCardData);
+                fiveDayForecastEl.append(divCardData);
     
                 var headerEl = $('<div>');
                 headerEl.attr('class', 'card-header')
