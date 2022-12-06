@@ -5,12 +5,12 @@ h1 {
 }
 /* current weather */
 label {
-    margin-top: 10px;
-    font-size: 20px;
+    margin-top: 30px;
+    font-size: 25px;
 }
 /* space between the future forecast */
 .card {
-    margin: 10px;
+    margin: 20px;
 }
 /* for the history of searches */
 .histBtnRow {
