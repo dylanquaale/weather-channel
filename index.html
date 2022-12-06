@@ -15,36 +15,34 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
      crossorigin="anonymous"/>
      
-     <title>Weather</title>
+     <title>Weather Channel</title>
   </head>
 
   <body>
     <header> <!--starting top of page adding format-->
       <h1>Weather App</h1>
     </header>
-     <div class="container-fluid mainCon">
+     <div class="container">
         <div class="row">
-        <div class="col-12" col-md-3 col-xl-3'>
                 <label>Search for a City:</label> <!--text above search bar-->
                 <!-- current weather-->
                 <div class="input-group mb-3"></div>
-                <input type="text" class="form-control textVal" placeholder="Minneapolis...">
+                <input type="text" class="form-control textVal" placeholder="">
                 <div class="input-group-append btnPar">
                 <button class="btn btn-primary search" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
                 </div> 
         </div>
         </div>
     
-    <div class="container cityHist"></div>
+    <div class="container storeHist"></div>
           <!--forecast container-->
     </div>  
-    <div class="col-12 col-md-9 col-xl-p9 colTwo">
         <div class="row today">
             <div class="card bg-light mb-3" style="max-width: 400px;">
             <h2 class="card-header cardTodayCityName"></h2>
             <h3 class="card-header cardTodayDate"></h3>
             <img class="icons"/>
-            <div class="card-body cardBodyToday">
+            <div class="card-body cardTodayBody">
              </div>
             </div>
         

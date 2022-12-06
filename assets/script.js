@@ -53,7 +53,7 @@ function getHistory() {
 
 // grab today card body
 
-var cardTodayBody = $('.cardBodyToday')
+var cardTodayBody = $('.cardTodayBody')
 
 function getWeatherToday() {
     var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
