@@ -15,7 +15,7 @@ $('.search').on("click", function (event){
     };
     cityData.push(currentCity);
 
-    localStorage.setItem('city', JSON.stringify(cityData));
+    localStorage.setItem('currentCity', JSON.stringify(cityData));
     fiveForecastEl.empty();
     getWeatherHistory();
     getTodayWeather();
@@ -82,9 +82,9 @@ function getTodayWeather() {
     var fiveForecastEl = $('.fiveForecast');
     
     function getFiveDayForecast() {
-        var getFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=imperial&appid=${key}`;//
+        var getFiveDayWeather = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=imperial&appid=${key}`;//
         $.ajax({
-            url: getFiveDay,
+            url: getFiveDayWeather,
             method: 'GET',
         }).then(function (response) {
             var fiveDayWeatherArray = response.list;
